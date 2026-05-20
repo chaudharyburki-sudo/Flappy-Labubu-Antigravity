@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Mobile-First Viewport & Hybrid Container Scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FLAPPY LABUBU — You Will Lose</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="900" height="520"></canvas>
+        
+        <!-- Live Thinking Panel Overlay -->
+        <div id="thinking-panel">
+            <div class="panel-header">
+                <span>[ ANTIGRAVITY ENGINE LIVE TRACE ]</span>
+                <span class="status-indicator"></span>
+            </div>
+            <div id="trace-logs"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

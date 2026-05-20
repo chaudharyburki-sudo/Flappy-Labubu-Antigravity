@@ -1,0 +1,77 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;display:flex;justify-content:center;align-items:center;height:100vh;overflow:hidden;font-family:'Orbitron',sans-serif; touch-action: none;}
+
+#game-container {
+    position: relative; 
+    width: 100vw; 
+    height: 100vh; 
+    max-width: 900px; 
+    max-height: 520px; 
+    box-shadow: 0 0 80px rgba(0,0,0,0.95), 0 0 150px rgba(20,20,20,0.5); 
+    border-radius: 6px; 
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    cursor: pointer; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain;
+}
+
+/* Live Thinking Panel - Overlay */
+#thinking-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    background: rgba(0, 5, 10, 0.85);
+    border-top: 1px solid rgba(0, 220, 255, 0.3);
+    font-family: monospace;
+    font-size: 11px;
+    color: #0df;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none; /* Let touches pass through to canvas */
+    z-index: 100;
+}
+
+.panel-header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 4px 8px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0, 220, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-indicator {
+    width: 8px; height: 8px; border-radius: 50%; background: #0f0; box-shadow: 0 0 5px #0f0;
+    animation: blink 1s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+#trace-logs {
+    padding: 6px;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.trace-entry {
+    margin-bottom: 4px;
+    opacity: 0;
+    animation: fadeIn 0.2s forwards;
+    text-shadow: 0 0 2px #0df;
+    line-height: 1.3;
+}
+.trace-entry .agent-a { color: #ff4455; font-weight: bold; }
+.trace-entry .agent-b { color: #ffee44; font-weight: bold; }
+.trace-entry .agent-c { color: #44ff88; font-weight: bold; }
+
+@keyframes fadeIn { to { opacity: 1; } }
